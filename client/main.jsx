@@ -12,7 +12,7 @@ Meteor.startup(() => {
 	function requireAuth(nextState, replace) {
 		if (!Meteor.userId()) {
 			replace({
-				pathname: '/a',
+				pathname: '/welcome',
 				state: { nextPathname: nextState.location.pathname }
 			})
 		}
@@ -21,7 +21,7 @@ Meteor.startup(() => {
 	render((
 		<Router history={browserHistory}>
 			<Route path="/" component={App}>
-				<Route path="a" component={Welcome} />
+				<Route path="welcome" component={Welcome} />
 				<Route path="b" component={Private} onEnter={requireAuth} />
 
 			</Route>
