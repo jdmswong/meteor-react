@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
+import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap';
 
 export default class MenuBar extends Component {
 	render() {
@@ -12,11 +12,11 @@ export default class MenuBar extends Component {
 					</Navbar.Brand>
 				</Navbar.Header>
 				<Nav>
-					<LinkContainer to={{ pathname: '/welcome' }}>
-						<NavItem eventKey={1} >Welcome</NavItem>
-					</LinkContainer>
+					<IndexLinkContainer to={{ pathname: '/' }}>
+						<NavItem eventKey={1} >Home</NavItem>
+					</IndexLinkContainer>
 					<LinkContainer to={{ pathname: '/b' }}>
-						<NavItem eventKey={1} >Private</NavItem>
+						<NavItem eventKey={2} >Private</NavItem>
 					</LinkContainer>
 				</Nav>
 			</Navbar>
