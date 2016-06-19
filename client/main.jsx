@@ -28,3 +28,5 @@ Meteor.startup(() => {
 		</Router>
 	), document.getElementById('render-target'));
 });
+
+

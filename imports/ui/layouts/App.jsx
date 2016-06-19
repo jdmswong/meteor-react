@@ -2,17 +2,19 @@ import React, { Component } from 'react';
 import AccountsUIWrapper from '../components/AccountsUIWrapper.jsx';
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
+import { Link } from 'react-router'
 
 // App component - represents the whole app
-export default class App extends Component {
+class App extends Component {
 	render() {
 
 		return (
 			<div>
 
 				<h2>L33t forum</h2>
-				<a href="a">Welcome page</a><br />
-				<a href="b">Private page</a><br />
+				<Link to="a">Welcome page</Link><br />
+				<Link to="b">Private page</Link><br />
+				<br />
 
 				<AccountsUIWrapper />
 
