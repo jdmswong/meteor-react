@@ -20,6 +20,8 @@ class Home extends Component {
 }
 
 export default createContainer(() => {
+	Meteor.subscribe('posts');
+
 	return {
 		posts: Posts.find().fetch()
 	};
