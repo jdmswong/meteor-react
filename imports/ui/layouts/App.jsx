@@ -4,7 +4,8 @@ import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Link } from 'react-router'
 
-import MenuBar from '../components/MenuBar.jsx'
+import MenuBar from '../components/MenuBar.jsx';
+import { Jumbotron } from 'react-bootstrap';
 
 // App component - represents the whole app
 class App extends Component {
@@ -17,8 +18,9 @@ class App extends Component {
 
 				<AccountsUIWrapper />
 
-
-				{this.props.children}
+				<Jumbotron>
+					{this.props.children}
+				</Jumbotron>
 
 			</div>
 		);
