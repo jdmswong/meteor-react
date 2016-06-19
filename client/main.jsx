@@ -8,12 +8,21 @@ import Welcome from '../imports/ui/pages/Welcome.jsx';
 import Private from '../imports/ui/pages/Private.jsx';
 
 Meteor.startup(() => {
-	//render(<App />, document.getElementById('render-target'));
+
+	function requireAuth(nextState, replace) {
+		if (!Meteor.userId()) {
+			replace({
+				pathname: '/a',
+				state: { nextPathname: nextState.location.pathname }
+			})
+		}
+	}
+
 	render((
 		<Router history={browserHistory}>
 			<Route path="/" component={App}>
 				<Route path="a" component={Welcome} />
-				<Route path="b" component={Private} />
+				<Route path="b" component={Private} onEnter={requireAuth} />
 
 			</Route>
 		</Router>
