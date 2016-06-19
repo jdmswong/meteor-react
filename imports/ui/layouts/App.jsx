@@ -7,9 +7,11 @@ export default class App extends Component {
 		return (
 			<div>
 
-				<h1>HELLO WORLD!</h1>
+				<h2>L33t forum</h2>
 
 				<AccountsUIWrapper />
+
+				{this.props.children}
 
 			</div>
 		);
