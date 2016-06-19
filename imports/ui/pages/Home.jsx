@@ -1,9 +1,26 @@
 import React, { Component } from 'react';
+import { createContainer } from 'meteor/react-meteor-data';
 
-export default class Home extends Component {
+import Posts from '../../api/posts.js';
+
+class Home extends Component {
+	//renderPosts(){
+	//	return ();
+	//}
+
 	render() {
 		return (
-			<h1>WELCOME HOME</h1>
+			<div>
+				<h1>WELCOME HOME</h1>
+
+				{ this.props.posts.map((post) => <p>{post.name}</p>) }
+			</div>
 		);
 	}
 }
+
+export default createContainer(() => {
+	return {
+		posts: Posts.find().fetch()
+	};
+}, Home);
