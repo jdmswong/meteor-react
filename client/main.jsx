@@ -6,6 +6,8 @@ import {
 	browserHistory, IndexRoute
 } from 'react-router'
 
+import '../imports/startup/accounts-config.js';
+
 import App from '../imports/ui/layouts/App.jsx';
 import Home from '../imports/ui/pages/Home.jsx';
 import Private from '../imports/ui/pages/Private.jsx';

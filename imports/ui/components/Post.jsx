@@ -4,8 +4,8 @@ import { Panel } from 'react-bootstrap';
 export default class Post extends Component {
 	render() {
 		return (
-			<Panel header="TITLE">
-				Panel content
+			<Panel header={this.props.title}>
+				{this.props.content}
 			</Panel>
 		);
 	}
